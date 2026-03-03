@@ -3,18 +3,17 @@ import service from "../../model/service.js";
 
 const fetchFullCart = async (req, res) => {
   try {
-    const { user } = req.body;
+    const { id } = req.body;
 
-    // ✅ Validate User ID
-    if (!user || !mongoose.Types.ObjectId.isValid(user)) {
+    if (!id || !mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({
         success: false,
-        message: "Valid user ID is required",
+        message: "Valid User ID is required",
       });
     }
 
-    // ✅ Find Cart
-    const cart = await service.clint.cart.findOne({ user });
+    // ✅ Correct field
+    const cart = await service.clint.cart.findOne({ user: id });
 
     if (!cart) {
       return res.status(404).json({
@@ -23,7 +22,6 @@ const fetchFullCart = async (req, res) => {
       });
     }
 
-    // ✅ Format Items Cleanly
     const formattedItems = cart.items.map((item) => ({
       _id: item.product.toString(),
       title: item.title,
