@@ -15,6 +15,8 @@ const routePath = {
         ADD_CART: "/product_add_cart",
         FETCH_FULL_CART: "/product_fetch_full_cart",
         FETCH_ID_CART: "/product_fetch_id_cart",
+        UPDATE_CART: "/product_update_cart",
+        REMOVE_SINGLE_CART_ITEM: "/product_remove_single_cart",
       },
     },
     AUTH: {
