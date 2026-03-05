@@ -18,6 +18,11 @@ const routePath = {
         UPDATE_CART: "/product_update_cart",
         REMOVE_SINGLE_CART_ITEM: "/product_remove_single_cart",
       },
+      WATCHLIST: {
+        ADD_WATCH_LIST: "/product_add_watch_list",
+        FETCH_WATCH_LIST: "/product_fetch_watch_list",
+        FETCH_FULL_WATCH_LIST: "/product_fetch_full_watch_list",
+      },
     },
     AUTH: {
       ROOT: "/auth",
