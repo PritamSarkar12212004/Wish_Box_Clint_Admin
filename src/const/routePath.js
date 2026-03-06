@@ -11,6 +11,7 @@ const routePath = {
     PRODUCT: {
       ROOT: "/product",
       FETCH_PRODUCT_IMAGE: "/fetch_product_image",
+      FETCH_FULL_PRODUCT: "/fetch_full_products",
       CART: {
         ADD_CART: "/product_add_cart",
         FETCH_FULL_CART: "/product_fetch_full_cart",

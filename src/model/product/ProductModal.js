@@ -6,14 +6,8 @@ const imageSchema = new mongoose.Schema(
       enum: ["q30", "q50", "q75", "q100"],
       required: true,
     },
-    url: {
-      type: String,
-      required: true,
-    },
-    public_id: {
-      type: String,
-      required: true,
-    },
+    url: { type: String, required: true },
+    public_id: { type: String, required: true },
   },
   { _id: false },
 );
@@ -35,31 +29,16 @@ const productSchema = new mongoose.Schema(
       enum: ["in_stock", "out_of_stock"],
       default: "in_stock",
     },
-    status: {
-      type: String,
-      enum: ["active", "inactive"],
-      default: "active",
-    },
+    status: { type: String, enum: ["active", "inactive"], default: "active" },
     isActive: { type: Boolean, default: true },
     paperSpecs: {
       gsm: { type: Number, required: true },
       height: { type: Number, required: true },
       width: { type: Number, required: true },
-      unit: {
-        type: String,
-        enum: ["cm", "inch"],
-        default: "cm",
-      },
+      unit: { type: String, enum: ["cm", "inch"], default: "cm" },
     },
-    images: {
-      primary: [imageSchema],
-    },
-    gallery: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "GalleryImage",
-      },
-    ],
+    images: { primary: [imageSchema] },
+    gallery: [{ type: mongoose.Schema.Types.ObjectId, ref: "GalleryImage" }],
     productCollection: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Collection",
@@ -68,5 +47,4 @@ const productSchema = new mongoose.Schema(
   },
   { timestamps: true },
 );
-
 export default mongoose.model("Product", productSchema);

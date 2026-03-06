@@ -11,9 +11,14 @@ import removeSingleCartItem from "../../controller/cart/removeSingleCartItem.con
 import addWatchList from "../../controller/watchlist/addWatchList.controller.js";
 import fetchWatchListStatus from "../../controller/watchlist/fetchWatchListStatus.controller.js";
 import fetchWatchListFullData from "../../controller/watchlist/fetchWatchListFullData.controller.js";
+import fetchFullProduct from "../../controller/product/fetchFullProduct.controller.js";
 
 const route = express.Router();
 
+route.post(
+  routePath.WISHBOX.PRODUCT.FETCH_FULL_PRODUCT,
+  routeHandler(fetchFullProduct),
+);
 route.post(
   routePath.WISHBOX.PRODUCT.FETCH_PRODUCT_IMAGE,
   routeHandler(fetchProductImage),
