@@ -6,7 +6,6 @@ import cors from "cors";
 
 import DataBase from "./src/services/database/DataBase.js";
 import route from "./src/routes/services.js";
-
 import routePath from "./src/const/routePath.js";
 
 dotenv.config({ quiet: true });
@@ -27,6 +26,7 @@ app.use(routePath.WISHBOX.DASHBOARD.ROOT, route.dashboard);
 app.use(routePath.WISHBOX.GALLERY.ROOT, route.gallery);
 app.use(routePath.WISHBOX.PRODUCT.ROOT, route.product);
 app.use(routePath.WISHBOX.AUTH.ROOT, route.auth);
+app.use(routePath.WISHBOX.CONTACT.ROOT, route.contact);
 
 DataBase()
   .then(() => {

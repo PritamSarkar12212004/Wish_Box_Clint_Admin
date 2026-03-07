@@ -4,6 +4,10 @@ const routePath = {
       ROOT: "/dashboard",
       FETCH_DATA: "/fetch_Dashboard_data",
     },
+    CONTACT: {
+      ROOT: "/contact",
+      FULL_CONTACT: "/full_contact",
+    },
     GALLERY: {
       ROOT: "/gallery",
       FETCH_GALLERY_DATA: "/fetch_Gallery_data",
