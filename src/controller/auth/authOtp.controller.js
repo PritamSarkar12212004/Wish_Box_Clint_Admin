@@ -1,10 +1,18 @@
 import api from "../../services/axios/api.js";
 import service from "../../model/service.js";
 
+// Random OTP generator
+const generateOTP = () => {
+  return Math.floor(100000 + Math.random() * 900000).toString();
+};
+
 const authOtp = async (req, res) => {
   const { phone } = req.body;
 
   try {
+    // Generate OTP
+    const otp = generateOTP();
+
     let user = await service.clint.clint.findOne({
       whatsappNumber: phone,
     });
@@ -20,7 +28,7 @@ const authOtp = async (req, res) => {
 
     const response = await api.post("/api/whatsapp/otp/wishbox", {
       number: phone,
-      otp: "123456",
+      otp: otp,
       type: "Login",
     });
 
@@ -29,6 +37,7 @@ const authOtp = async (req, res) => {
       message: isNewUser
         ? "New user created & OTP sent"
         : "Existing user - OTP sent",
+      otp: otp, // debugging ke liye
       otpData: response.data,
       user: user,
       userId: user._id,
