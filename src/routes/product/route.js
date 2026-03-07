@@ -12,6 +12,7 @@ import addWatchList from "../../controller/watchlist/addWatchList.controller.js"
 import fetchWatchListStatus from "../../controller/watchlist/fetchWatchListStatus.controller.js";
 import fetchWatchListFullData from "../../controller/watchlist/fetchWatchListFullData.controller.js";
 import fetchFullProduct from "../../controller/product/fetchFullProduct.controller.js";
+import fetchFullCollection from "../../controller/collection/fetchFullCollection.controller.js";
 
 const route = express.Router();
 
@@ -19,9 +20,15 @@ route.post(
   routePath.WISHBOX.PRODUCT.FETCH_FULL_PRODUCT,
   routeHandler(fetchFullProduct),
 );
+
 route.post(
   routePath.WISHBOX.PRODUCT.FETCH_PRODUCT_IMAGE,
   routeHandler(fetchProductImage),
+);
+
+route.post(
+  routePath.WISHBOX.PRODUCT.COLLECTION.FETCH_FULL_COLLECTION,
+  routeHandler(fetchFullCollection),
 );
 
 route.post(routePath.WISHBOX.PRODUCT.CART.ADD_CART, routeHandler(addToCart));
