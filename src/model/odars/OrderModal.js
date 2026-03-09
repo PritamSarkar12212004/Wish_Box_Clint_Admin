@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 const orderItemSchema = new mongoose.Schema(
   {
     product: {
@@ -8,10 +9,7 @@ const orderItemSchema = new mongoose.Schema(
     title: String,
     price: Number,
     quantity: Number,
-    image: {
-      url: String,
-      public_id: String,
-    },
+    image: String,
   },
   { _id: false },
 );
@@ -37,16 +35,21 @@ const paymentSchema = new mongoose.Schema(
   {
     paymentType: {
       type: String,
-      enum: ["cod", "online"],
+      enum: ["cod", "upi"],
       required: true,
     },
-    transactionId: String,
-    paymentGateway: String, // Razorpay / Stripe
+
+    utr: {
+      type: String,
+      default: null,
+    },
+
     paymentStatus: {
       type: String,
-      enum: ["pending", "success", "failed"],
-      default: "pending",
+      enum: ["waiting_payment", "pending_verification", "paid", "failed"],
+      default: "waiting_payment",
     },
+
     paidAt: Date,
   },
   { _id: false },
@@ -74,12 +77,26 @@ const orderSchema = new mongoose.Schema(
       required: true,
     },
 
+    cartProcessed: {
+      type: Boolean,
+      default: false,
+    },
+
     payment: paymentSchema,
 
     orderStatus: {
       type: String,
-      enum: ["placed", "confirmed", "shipped", "delivered", "cancelled"],
-      default: "placed",
+      enum: [
+        "checkout_initiated",
+        "payment_pending",
+        "payment_verification",
+        "order_placed",
+        "confirmed",
+        "shipped",
+        "delivered",
+        "cancelled",
+      ],
+      default: "checkout_initiated",
     },
   },
   { timestamps: true },

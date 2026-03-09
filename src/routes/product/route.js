@@ -13,6 +13,7 @@ import fetchWatchListStatus from "../../controller/watchlist/fetchWatchListStatu
 import fetchWatchListFullData from "../../controller/watchlist/fetchWatchListFullData.controller.js";
 import fetchFullProduct from "../../controller/product/fetchFullProduct.controller.js";
 import fetchFullCollection from "../../controller/collection/fetchFullCollection.controller.js";
+import fainalUpdateCartWithOrderPlace from "../../controller/cart/fainalUpdateCartWithOrderPlace.controller.js";
 
 const route = express.Router();
 
@@ -46,6 +47,10 @@ route.post(
 route.post(
   routePath.WISHBOX.PRODUCT.CART.UPDATE_CART,
   routeHandler(updateCart),
+);
+route.post(
+  routePath.WISHBOX.PRODUCT.CART.FAINAL_UPDATECART_WITH_CREATE_ORDER,
+  routeHandler(fainalUpdateCartWithOrderPlace),
 );
 
 route.post(

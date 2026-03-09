@@ -6,6 +6,7 @@ import ClientCartModal from "./client/ClientCartModal.js";
 import ClientModal from "./client/ClientModal.js";
 import ClientWatchListModal from "./client/ClientWatchListModal.js";
 import contactFullModel from "./contact/contactFullModel.js";
+import paymentDetilesModal from "./paymentDetiles/paymentDetilesModal.js";
 const service = {
   product: ProductModal,
   gallery: GalleryImageModal,
@@ -18,6 +19,9 @@ const service = {
   },
   contact: {
     fullContact: contactFullModel,
+  },
+  payment: {
+    admin_payment_info: paymentDetilesModal,
   },
 };
 export default service;

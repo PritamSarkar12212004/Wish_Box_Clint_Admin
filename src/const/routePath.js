@@ -12,6 +12,10 @@ const routePath = {
       ROOT: "/gallery",
       FETCH_GALLERY_DATA: "/fetch_Gallery_data",
     },
+    PAYMENT: {
+      ROOT: "/payment",
+      FETCH_ADMIN_PAYMENT_INFO: "/fetch_admin_payment_info",
+    },
     PRODUCT: {
       ROOT: "/product",
       FETCH_PRODUCT_IMAGE: "/fetch_product_image",
@@ -25,6 +29,8 @@ const routePath = {
         FETCH_ID_CART: "/product_fetch_id_cart",
         UPDATE_CART: "/product_update_cart",
         REMOVE_SINGLE_CART_ITEM: "/product_remove_single_cart",
+        FAINAL_UPDATECART_WITH_CREATE_ORDER:
+          "/product_cart_fainal_update_order_place",
       },
       WATCHLIST: {
         ADD_WATCH_LIST: "/product_add_watch_list",
