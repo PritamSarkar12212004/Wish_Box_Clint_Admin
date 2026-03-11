@@ -4,6 +4,7 @@ import product from "./product/route.js";
 import auth from "./auth/route.js";
 import contact from "./contact/route.js";
 import payment from "./payment/route.js";
+import order from "./order/route.js";
 const services = {
   dashboard: dashboard,
   gallery: gallery,
@@ -11,5 +12,6 @@ const services = {
   auth: auth,
   contact: contact,
   payment: payment,
+  order: order,
 };
 export default services;

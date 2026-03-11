@@ -12,6 +12,10 @@ const routePath = {
       ROOT: "/gallery",
       FETCH_GALLERY_DATA: "/fetch_Gallery_data",
     },
+    ORDER: {
+      ROOT: "/order",
+      FETCH_ORDER_DETILES: "/fetch_order_detiles",
+    },
     PAYMENT: {
       ROOT: "/payment",
       FETCH_ADMIN_PAYMENT_INFO: "/fetch_admin_payment_info",

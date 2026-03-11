@@ -28,6 +28,7 @@ app.use(routePath.WISHBOX.PRODUCT.ROOT, route.product);
 app.use(routePath.WISHBOX.AUTH.ROOT, route.auth);
 app.use(routePath.WISHBOX.CONTACT.ROOT, route.contact);
 app.use(routePath.WISHBOX.PAYMENT.ROOT, route.payment);
+app.use(routePath.WISHBOX.ORDER.ROOT, route.order);
 
 DataBase()
   .then(() => {
