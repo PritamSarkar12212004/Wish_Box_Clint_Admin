@@ -15,6 +15,7 @@ const routePath = {
     ORDER: {
       ROOT: "/order",
       FETCH_ORDER_DETILES: "/fetch_order_detiles",
+      FETCH_ORDER_BY_ID_DETILES: "/fetch_order_by_orderId",
       CANCEL_ORDER: "/cancel_order",
     },
     PAYMENT: {
