@@ -2,10 +2,20 @@ import mongoose from "mongoose";
 
 const addressSchema = new mongoose.Schema(
   {
+    addressLine1: {
+      type: String,
+      required: true,
+    },
     city: {
       type: String,
       required: true,
     },
+
+    district: {
+      type: String,
+      required: true,
+    },
+
     state: {
       type: String,
       required: true,
@@ -15,6 +25,7 @@ const addressSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+
     isDefault: {
       type: Boolean,
       default: false,
@@ -32,6 +43,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+
     addresses: [addressSchema],
   },
   { timestamps: true },
